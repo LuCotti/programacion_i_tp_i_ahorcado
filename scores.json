@@ -1,0 +1,12 @@
+{
+    "jugador": [
+        {
+            "nombre": "lucho",
+            "puntaje": 7
+        },
+        {
+            "nombre": "luciano",
+            "puntaje": 5
+        }
+    ]
+}
