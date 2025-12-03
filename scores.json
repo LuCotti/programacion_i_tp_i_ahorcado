@@ -1,12 +1,16 @@
 {
     "jugador": [
         {
-            "nombre": "lucho",
-            "puntaje": 7
+            "nombre": "santiago",
+            "puntaje": 8
         },
         {
             "nombre": "luciano",
-            "puntaje": 5
+            "puntaje": 4
+        },
+        {
+            "nombre": "lucas",
+            "puntaje": 2
         }
     ]
 }

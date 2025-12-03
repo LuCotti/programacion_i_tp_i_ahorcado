@@ -10,7 +10,7 @@ def ordenar_lista(lista: list) -> list:
         # Diccionario completo
         dict_maximo = lista[i]
         
-        # Metodo selection sort adaptado a este caso en especial
+        # Método selection sort adaptado a este caso en especial
         for j in range(i + 1, len(lista)):
             if lista[j]['puntaje'] > maximo:
                 maximo = lista[j]['puntaje']
@@ -23,16 +23,16 @@ def ordenar_lista(lista: list) -> list:
         
     return lista
 
-# Definimos una función para imprimr los 5 mejores puntajes de la lista.
+# Definimos una función para imprimir los 5 mejores puntajes de la lista.
 def mostrar_mejores_puntajes(nombre_archivo):
     try:
-        # Nos devuelve en forma de lista los datos
+        # Nos devuelve los datos en forma de lista
         lista = leer_archivo_json(nombre_archivo)
 
-        #Establecemos el diccionario que queremos recorrer (jugaodres)
+        # Establecemos el diccionario que queremos recorrer (jugaodres)
         contenido = lista["jugador"]
 
-        #Recorremos el diccionario asignando y mostrando por consola los datos de los jugadores
+        # Recorremos el diccionario asignando y mostrando por consola los datos de los jugadores
         for i in range(len(contenido)):
             if i <= 4:
                 nombre = contenido[i]['nombre']
@@ -41,25 +41,24 @@ def mostrar_mejores_puntajes(nombre_archivo):
             print(f'{i + 1}. {nombre} - {puntaje} puntos.')
         return True
 
-    #Si el archivo esta vacio inicializamos la estructura basica para guardar los puntajes
+    # Si el archivo está vacío, inicializamos la estructura básica para guardar los puntajes
     except json.decoder.JSONDecodeError:
         return False
 
-# Definimos una función para cargar el puntaje en el archivo JSON.
+# Definimos una función para cargar el puntaje en el archivo JSON
 def cargar_puntaje(nombre_usuario: str, puntaje: int, nombre_archivo: str) -> None:
-    #Intentamos leer el contenido del archivo
+    # Intentamos leer el contenido del archivo
     try:
-        # Intentamos leer los datos del archivo JSON
         puntajes = leer_archivo_json(nombre_archivo)
 
-    #Si el archivo esta vacio inicializamos la estructura basica para guardar los puntajes
+    # Si el archivo está vacío, inicializamos la estructura basica para guardar los puntajes
     except json.decoder.JSONDecodeError:
         inicializar_puntajes(nombre_archivo)
 
-    # cargamos una nueva partida de jugador
+    # Cargamos una nueva partida de jugador
     nuevo_puntaje = {
-        'nombre': nombre_usuario,
-        'puntaje': puntaje
+        "nombre": nombre_usuario,
+        "puntaje": puntaje
     }
     puntajes = leer_archivo_json(nombre_archivo)
 
@@ -84,7 +83,7 @@ def cargar_puntaje(nombre_usuario: str, puntaje: int, nombre_archivo: str) -> No
     print("*" * 40)
 
 
-# Función auxiliar para incializar el archivo JSON de puntajes con diccionario.
+# Función auxiliar para inicializar el archivo JSON de puntajes con diccionario
 def inicializar_puntajes(nombre_archivo):
     lista_vacia = {
         "jugador": [

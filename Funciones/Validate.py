@@ -12,7 +12,7 @@ def get_int(mensaje: str, mensaje_error: str, minimo: int, maximo: int, reintent
     if validate_number(dato_ingresado):
         dato_convertido = int(dato_ingresado)
         
-        # Luego validamos que se encuentre dentro del rango.
+        # Luego validamos que se encuentre dentro del rango
         if dato_convertido >= minimo and dato_convertido <= maximo:
             return dato_convertido
         else:
@@ -29,8 +29,8 @@ def get_int(mensaje: str, mensaje_error: str, minimo: int, maximo: int, reintent
             return None
 
 
-def validar_letra (letra, palabra):
-    for i in range (len(palabra)):
+def validar_letra(letra, palabra):
+    for i in range(len(palabra)):
         if letra == palabra[i]:
             return True
     return False
