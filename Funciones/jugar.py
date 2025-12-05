@@ -69,7 +69,7 @@ def jugar(idioma):
         
         # Validamos si adivinó la palabra
         if "_" not in palabra_oculta:
-            print(efecto_victoria())
+            efecto_victoria(idioma)
             nombre_ingresado = input("Introduzca su nombre de jugador: ").lower()
             # Validamos que el nombre solo incluya letras
             while not nombre_ingresado.isalpha():
@@ -82,7 +82,7 @@ def jugar(idioma):
     if intento_actual == intentos_max:
         # Dibuja al monigote ahorcado, el efecto de derrota y qué palabra era
         dibujar_monigote(intento_actual)
-        print(efecto_derrota())
+        efecto_derrota(idioma)
         print("La palabra era:", palabra)
         nombre_ingresado = input("Introduzca su nombre de jugador: ").lower()
         while not nombre_ingresado.isalpha():
