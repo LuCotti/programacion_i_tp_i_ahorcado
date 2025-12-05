@@ -4,7 +4,7 @@ from .lectura_escritura_json import *
 def ordenar_lista(lista: list) -> list:
     for i in range(len(lista)):
         # Valores numéricos
-        maximo = lista[i]['puntaje']
+        maximo = lista[i]["puntaje"]
         posicion_maximo = i
         
         # Diccionario completo
@@ -12,8 +12,8 @@ def ordenar_lista(lista: list) -> list:
         
         # Método selection sort adaptado a este caso en especial
         for j in range(i + 1, len(lista)):
-            if lista[j]['puntaje'] > maximo:
-                maximo = lista[j]['puntaje']
+            if lista[j]["puntaje"] > maximo:
+                maximo = lista[j]["puntaje"]
                 posicion_maximo = j
                 dict_maximo = lista[j]
         
@@ -35,10 +35,10 @@ def mostrar_mejores_puntajes(nombre_archivo):
         # Recorremos el diccionario asignando y mostrando por consola los datos de los jugadores
         for i in range(len(contenido)):
             if i <= 4:
-                nombre = contenido[i]['nombre']
-                puntaje = contenido[i]['puntaje']
+                nombre = contenido[i]["nombre"]
+                puntaje = contenido[i]["puntaje"]
             
-            print(f'{i + 1}. {nombre} - {puntaje} puntos.')
+            print(f"{i + 1}. {nombre} - {puntaje} puntos.")
         return True
 
     # Si el archivo está vacío, inicializamos la estructura básica para guardar los puntajes
@@ -63,10 +63,10 @@ def cargar_puntaje(nombre_usuario: str, puntaje: int, nombre_archivo: str) -> No
     puntajes = leer_archivo_json(nombre_archivo)
 
     # Añadimos el puntaje nuevo a la lista
-    puntajes['jugador'].append(nuevo_puntaje)
+    puntajes["jugador"].append(nuevo_puntaje)
 
     # Ordenamos la lista.
-    puntajes['jugador'] = ordenar_lista(puntajes['jugador'])
+    puntajes["jugador"] = ordenar_lista(puntajes["jugador"])
 
     # Sobrescribimos el archivo JSON
     escribir_archivo_json(puntajes, nombre_archivo)
@@ -75,18 +75,16 @@ def cargar_puntaje(nombre_usuario: str, puntaje: int, nombre_archivo: str) -> No
     print("*" * 40)
     for i in range(len(puntajes["jugador"])):
         if i <= 4:
-            nombre = puntajes["jugador"][i]['nombre']
-            puntaje = puntajes["jugador"][i]['puntaje']
+            nombre = puntajes["jugador"][i]["nombre"]
+            puntaje = puntajes["jugador"][i]["puntaje"]
 
-            print(f'{i + 1}. {nombre} - {puntaje} puntos.')
+            print(f"{i + 1}. {nombre} - {puntaje} puntos.")
             print("-" * 40)
     print("*" * 40)
-
 
 # Función auxiliar para inicializar el archivo JSON de puntajes con diccionario
 def inicializar_puntajes(nombre_archivo):
     lista_vacia = {
-        "jugador": [
-        ]
+        "jugador": []
     }
     escribir_archivo_json(lista_vacia, nombre_archivo)

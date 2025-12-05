@@ -6,5 +6,5 @@ def leer_archivo_json(nombre_archivo):
     return datos_leidos
 
 def escribir_archivo_json(datos, nombre_archivo):
-    with open(nombre_archivo, 'w') as file: 
+    with open(nombre_archivo, "w") as file:
         json.dump(datos, file, indent=4)

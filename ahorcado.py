@@ -2,14 +2,14 @@ from funciones import *
 
 archivo_puntajes =  "scores.json"
 
-menu = '''
+menu = """
 ---- Menú de opciones ----
 
-1. Jugar. 
-2. Puntaje. 
+1. Jugar.
+2. Puntaje.
 3. Salir.
 
-Ingrese la opción deseada: '''
+Ingrese la opción deseada: """
 
 def game():
     print ("BIENVENIDO AL JUEGO DEL AHORCADO")
