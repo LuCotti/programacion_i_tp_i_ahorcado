@@ -1,3 +1,4 @@
+import os
 def validate_number(dato: int) -> bool:
     try:
         int(dato)
@@ -16,12 +17,14 @@ def get_int(mensaje: str, mensaje_error: str, minimo: int, maximo: int, reintent
         if dato_convertido >= minimo and dato_convertido <= maximo:
             return dato_convertido
         else:
+            os.system("clear")
             print(mensaje_error)
             if reintentos > 0:
                 return get_int(mensaje, mensaje_error, minimo, maximo, reintentos - 1)
             else:
                 return None
     else:
+        os.system("clear")
         print(mensaje_error)
         if reintentos > 0:
             return get_int(mensaje, mensaje_error, minimo, maximo, reintentos - 1)
