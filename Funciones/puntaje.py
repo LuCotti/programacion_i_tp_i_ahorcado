@@ -32,6 +32,7 @@ def mostrar_mejores_puntajes(nombre_archivo: str) -> bool:
         # Establecemos el diccionario que queremos recorrer (jugaodres)
         contenido = lista["jugador"]
 
+        print("*" * 40)
         # Recorremos el diccionario asignando y mostrando por consola los datos de los jugadores
         for i in range(len(contenido)):
             if i <= 4:
@@ -39,6 +40,7 @@ def mostrar_mejores_puntajes(nombre_archivo: str) -> bool:
                 puntaje = contenido[i]["puntaje"]
             
             print(f"{i + 1}. {nombre} - {puntaje} puntos.")
+        print("*" * 40)
         return True
 
     # Si el archivo está vacío, inicializamos la estructura básica para guardar los puntajes
