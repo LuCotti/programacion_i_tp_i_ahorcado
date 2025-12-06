@@ -42,7 +42,7 @@ def mostrar_mejores_puntajes(nombre_archivo):
         return True
 
     # Si el archivo está vacío, inicializamos la estructura básica para guardar los puntajes
-    except json.decoder.JSONDecodeError:
+    except (json.decoder.JSONDecodeError, FileNotFoundError):
         return False
 
 # Definimos una función para cargar el puntaje en el archivo JSON
@@ -52,7 +52,7 @@ def cargar_puntaje(nombre_usuario: str, puntaje: int, nombre_archivo: str) -> No
         puntajes = leer_archivo_json(nombre_archivo)
 
     # Si el archivo está vacío, inicializamos la estructura basica para guardar los puntajes
-    except json.decoder.JSONDecodeError:
+    except (json.decoder.JSONDecodeError, FileNotFoundError):
         inicializar_puntajes(nombre_archivo)
 
     # Cargamos una nueva partida de jugador
