@@ -1,4 +1,4 @@
-from funciones_rename import *
+from funciones import *
 import os
 
 menu = """
