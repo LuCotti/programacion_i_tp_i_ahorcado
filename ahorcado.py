@@ -1,17 +1,19 @@
 from funciones import *
+import os
 
 archivo_puntajes =  "scores.json"
 
 menu = """
 ---- Menú de opciones ----
 
-1. Jugar.
-2. Puntaje.
-3. Salir.
+1. Jugar
+2. Ver mejores puntajes
+3. Salir
 
 Ingrese la opción deseada: """
 
 def game():
+    os.system("clear")
     print ("BIENVENIDO AL JUEGO DEL AHORCADO")
     while True:
         opcion = get_int(menu,"Error: opción inexistente",1,3,50)
@@ -24,10 +26,11 @@ def game():
                     print("Opción inválida.")
                     seleccion_idioma = input("Seleccione el idioma [ES | EN]: ").upper()
 
+                os.system("clear")
                 jugar(seleccion_idioma)
-                pass
             case 2:
-                if mostrar_mejores_puntajes(archivo_puntajes):
+                os.system("clear")
+                if mostrar_mejores_puntajes(archivo_puntajes, "ES"):
                     pass
                 else:
                     print("No hay puntajes registrados")

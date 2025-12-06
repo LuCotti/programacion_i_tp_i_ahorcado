@@ -24,7 +24,7 @@ def ordenar_lista(lista: list) -> list:
     return lista
 
 # Definimos una función para imprimir los 5 mejores puntajes de la lista.
-def mostrar_mejores_puntajes(nombre_archivo: str) -> bool:
+def mostrar_mejores_puntajes(nombre_archivo: str, idioma: str) -> bool:
     try:
         # Nos devuelve los datos en forma de lista
         lista = leer_archivo_json(nombre_archivo)
@@ -32,7 +32,10 @@ def mostrar_mejores_puntajes(nombre_archivo: str) -> bool:
         # Establecemos el diccionario que queremos recorrer (jugaodres)
         contenido = lista["jugador"]
 
-        print("*" * 40)
+        if idioma == "ES":
+            print("*" * 11, "MEJORES PUNTAJES", "*" * 11)
+        elif idioma == "EN":
+            print("*" * 13, "BEST  SCORES", "*" * 13)
         # Recorremos el diccionario asignando y mostrando por consola los datos de los jugadores
         for i in range(len(contenido)):
             if i <= 4:
@@ -72,17 +75,6 @@ def cargar_puntaje(nombre_usuario: str, puntaje: int, nombre_archivo: str) -> No
 
     # Sobrescribimos el archivo JSON
     escribir_archivo_json(puntajes, nombre_archivo)
-
-    # Mostramos los 5 mejores puntajes de la lista.
-    print("*" * 40)
-    for i in range(len(puntajes["jugador"])):
-        if i <= 4:
-            nombre = puntajes["jugador"][i]["nombre"]
-            puntaje = puntajes["jugador"][i]["puntaje"]
-
-            print(f"{i + 1}. {nombre} - {puntaje} puntos.")
-            print("-" * 40)
-    print("*" * 40)
 
 # Función auxiliar para inicializar el archivo JSON de puntajes con diccionario
 def inicializar_puntajes(nombre_archivo: str) -> None:
