@@ -1,8 +1,6 @@
 from funciones import *
 import os
 
-archivo_puntajes =  "scores.json"
-
 menu = """
 ---- Menú de opciones ----
 
@@ -30,7 +28,7 @@ def game():
                 jugar(seleccion_idioma)
             case 2:
                 os.system("clear")
-                if mostrar_mejores_puntajes(archivo_puntajes, "ES"):
+                if mostrar_mejores_puntajes(nombre_archivo_puntajes, "ES"):
                     pass
                 else:
                     print("No hay puntajes registrados")

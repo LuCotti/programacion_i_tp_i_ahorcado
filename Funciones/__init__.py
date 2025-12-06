@@ -5,3 +5,4 @@ from .jugar import *
 from .lectura_escritura_json import * 
 from .mensajes import * 
 from .Validate import *
+from .variables import *

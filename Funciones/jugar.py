@@ -1,12 +1,10 @@
+from .variables import nombre_archivo_puntajes
 from .elegir_palabra import eleccion_aleatoria
 from .etapas_monigote import dibujar_monigote
 from .puntaje import cargar_puntaje, mostrar_mejores_puntajes
 from .Validate import validar_letra
 from .mensajes import efecto_victoria, efecto_derrota
 import os
-
-# Establecemos el nombre del archivo
-nombre_archivo_puntajes = "scores.json"
 
 # Creamos una función para identificar en qué posición/es de la palabra se encuentra la letra que el jugador escribió
 def posicion_letra(letra: str, palabra: str) -> list[int]:

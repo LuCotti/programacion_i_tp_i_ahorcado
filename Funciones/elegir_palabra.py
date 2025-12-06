@@ -1,8 +1,6 @@
 import random 
+from .variables import nombre_archivo_datos
 from .lectura_escritura_json import * 
-
-# Establecemeos nombre del archivo
-nombre_archivo_datos = "data.json"
 
 # Utilizando un diccionario generamos los contenidos
 datos = {
