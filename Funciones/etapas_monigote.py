@@ -1,4 +1,4 @@
-def dibujar_monigote(intento_actual):
+def dibujar_monigote(intento_actual: int) -> None:
     etapa = [
         """
           -----

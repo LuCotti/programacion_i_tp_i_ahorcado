@@ -24,7 +24,7 @@ def ordenar_lista(lista: list) -> list:
     return lista
 
 # Definimos una función para imprimir los 5 mejores puntajes de la lista.
-def mostrar_mejores_puntajes(nombre_archivo):
+def mostrar_mejores_puntajes(nombre_archivo: str) -> bool:
     try:
         # Nos devuelve los datos en forma de lista
         lista = leer_archivo_json(nombre_archivo)
@@ -83,7 +83,7 @@ def cargar_puntaje(nombre_usuario: str, puntaje: int, nombre_archivo: str) -> No
     print("*" * 40)
 
 # Función auxiliar para inicializar el archivo JSON de puntajes con diccionario
-def inicializar_puntajes(nombre_archivo):
+def inicializar_puntajes(nombre_archivo: str) -> None:
     lista_vacia = {
         "jugador": []
     }

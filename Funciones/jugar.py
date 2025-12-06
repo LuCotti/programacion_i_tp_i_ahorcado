@@ -1,4 +1,3 @@
-# from .lectura_escritura_json import escribir_archivo_json, leer_archivo_json
 from .elegir_palabra import eleccion_aleatoria
 from .etapas_monigote import dibujar_monigote
 from .puntaje import cargar_puntaje
@@ -9,7 +8,7 @@ from .mensajes import efecto_victoria, efecto_derrota
 nombre_archivo_puntajes = "scores.json"
 
 # Creamos una función para identificar en qué posición/es de la palabra se encuentra la letra que el jugador escribió
-def posicion_letra(letra, palabra):
+def posicion_letra(letra: str, palabra: str) -> list[int]:
     posiciones = []
     # Recorremos la palabra
     for i in range(len(palabra)):
@@ -18,7 +17,7 @@ def posicion_letra(letra, palabra):
     # Retornamos una lista con los índices en los que la letra fue encontrada
     return posiciones
 
-def jugar(idioma):
+def jugar(idioma: str) -> None:
     # Asignamos variables necesarias
     intentos_max = 6
     intento_actual = 0
@@ -75,7 +74,6 @@ def jugar(idioma):
             while not nombre_ingresado.isalpha():
                 print("Ingrese solo letras.")
                 nombre_ingresado = input("Introduzca su nombre de jugador: ").lower()
-            print("¡Puntaje guardado exitosamente!")
             break
         
     # Si no le quedan más intentos
@@ -88,7 +86,7 @@ def jugar(idioma):
         while not nombre_ingresado.isalpha():
             print("Ingrese solo letras.")
             nombre_ingresado = input("Introduzca su nombre de jugador: ").lower()
-        print("¡Puntaje guardado exitosamente!")
     
     # Cargamos el puntaje en el archivo de puntajes
     cargar_puntaje(nombre_ingresado, puntaje, nombre_archivo_puntajes)
+    print("¡Puntaje guardado exitosamente!")

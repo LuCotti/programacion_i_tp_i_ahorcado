@@ -61,7 +61,7 @@ datos = {
 }
 
 #Punto A/B
-def eleccion_aleatoria(idioma):
+def eleccion_aleatoria(idioma: str) -> str:
     # Cargamos el archivo con los datos
     escribir_archivo_json(datos, nombre_archivo_datos)
     # Guardamos en una variable todo el contenido

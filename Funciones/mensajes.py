@@ -1,4 +1,4 @@
-def efecto_victoria(idioma):
+def efecto_victoria(idioma: str) -> None:
     match idioma:
         case "EN":
             print(r"""
@@ -21,7 +21,9 @@ __     ______  _    _   __          _______ _   _
         case _:
             print("¡Congratulations!")
 
-def efecto_derrota(idioma):
+
+
+def efecto_derrota(idioma: str) -> None:
     match idioma:
         case "EN":
             print(r"""

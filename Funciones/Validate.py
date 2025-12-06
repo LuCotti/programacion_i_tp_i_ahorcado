@@ -5,7 +5,7 @@ def validate_number(dato: int) -> bool:
     except ValueError:
         return  False
 
-def get_int(mensaje: str, mensaje_error: str, minimo: int, maximo: int, reintentos: int) -> (int | None):
+def get_int(mensaje: str, mensaje_error: str, minimo: int, maximo: int, reintentos: int) -> int | None:
     dato_ingresado = input(mensaje)
     
     # Primero validamos el tipo de dato.
@@ -29,7 +29,7 @@ def get_int(mensaje: str, mensaje_error: str, minimo: int, maximo: int, reintent
             return None
 
 
-def validar_letra(letra, palabra):
+def validar_letra(letra: str, palabra: str) -> bool:
     for i in range(len(palabra)):
         if letra == palabra[i]:
             return True
