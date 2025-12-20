@@ -37,10 +37,9 @@ def mostrar_mejores_puntajes(nombre_archivo: str, idioma: str) -> bool:
         elif idioma == "EN":
             print("*" * 13, "BEST  SCORES", "*" * 13)
         # Recorremos el diccionario asignando y mostrando por consola los datos de los jugadores
-        for i in range(len(contenido)):
-            if i <= 4:
-                nombre = contenido[i]["nombre"]
-                puntaje = contenido[i]["puntaje"]
+        for i in range(5):
+            nombre = contenido[i]["nombre"]
+            puntaje = contenido[i]["puntaje"]
             
             print(f"{i + 1}. {nombre} - {puntaje} puntos.")
         print("*" * 40)
