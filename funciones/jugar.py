@@ -52,9 +52,10 @@ def jugar(idioma: str) -> None:
 
         # Validamos y reemplazamos si acertó
         if validar_letra(letra, palabra):
+            puntaje += 1
             os.system("clear")
             print("¡Bien hecho! Adivinaste una letra.")
-            puntaje += 1
+            print("Puntaje actual:", puntaje)
 
             posiciones_encontradas = posicion_letra(letra, palabra) # Nos devuelve una lista con los índices
             palabra_oculta = list(palabra_oculta) # Convertimos la palabra oculta a una lista para poder modificar por índice
@@ -68,9 +69,11 @@ def jugar(idioma: str) -> None:
             intento_actual += 1
             os.system("clear")
             print("Letra incorrecta.")
+            print("Puntaje actual:", puntaje)
         
         # Validamos si adivinó la palabra
         if "_" not in palabra_oculta:
+            puntaje *= 2
             efecto_victoria(idioma)
             print("Puntaje final:", puntaje)
             nombre_ingresado = input("Introduzca su nombre de jugador: ").lower()
